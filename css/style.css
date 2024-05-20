@@ -1,0 +1,197 @@
+/*___FONT_______________________________________________________________________*/
+
+/* lato-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../font/lato-v24-latin-regular.woff2') format('woff2');
+}
+/* lato-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../font/lato-v24-latin-700.woff2') format('woff2');
+}
+/* lato-900 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../font/lato-v24-latin-900.woff2') format('woff2');
+}
+
+/* montserrat-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../font/montserrat-v26-latin-regular.woff2') format('woff2');
+}
+/* montserrat-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../font/montserrat-v26-latin-700.woff2') format('woff2');
+}
+
+/*___GLOBAL RULES_______________________________________________________________________*/
+
+:root{
+    --grey : #352F44;
+    --blue : #6488E5;
+    --bg : #EFEDE7;
+
+    --normal-font : 'Lato', 'Segoe UI', sans-serif;
+    --title-font : 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+body{
+    font-family: var(--normal-font);
+    font-size: 1rem;
+    line-height: 1.75;
+    font-weight: 400;
+    font-style: normal;
+    color:var(--grey);
+    width: 21cm;
+    margin: 0 auto;
+}
+
+@media print {
+    body {
+        width: 21cm;
+        margin: 0 auto;
+    }
+}
+.section__title{
+    color: var(--blue);
+    text-transform: uppercase;
+}
+
+/*___LAYOUT_______________________________________________________________________*/
+main{
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-template-areas:
+            "snd first";
+}
+
+.header{
+    grid-area : header;
+}
+
+.main{
+    grid-area : main;
+}
+.section__primary{
+    grid-area : first;
+}
+.section__secondary{
+    grid-area : snd;
+}
+/*.section__secondary{*/
+/*    grid-area: ga-col2;*/
+/*    background-color: var(--bg);*/
+/*}*/
+
+/*.header__container{*/
+/*    display : grid;*/
+/*    grid-template-columns: 2fr 5fr;*/
+/*    grid-template-areas:*/
+/*            "head-img head-content";*/
+/*}*/
+
+.section__content{
+    grid-area : head-content
+}
+
+.section__img{
+    grid-area : head-img;
+    background-color: var(--bg);
+}
+
+
+/*.section__contact{*/
+/*    grid-area : contact*/
+/*}*/
+
+/*.section__skill{*/
+/*    grid-area : skill*/
+/*}*/
+
+/*.section__study{*/
+/*    grid-area : study*/
+/*}*/
+
+/*.section__skill{*/
+/*    grid-area : soft-skill*/
+/*}*/
+
+/*.section__experience{*/
+/*    grid-area : experience*/
+/*}*/
+
+/*.section__alternance{*/
+/*    grid-area : alternance*/
+/*}*/
+
+/*.section__activity{*/
+/*    grid-area : activity*/
+/*}*/
+
+/*.section__project{*/
+/*    grid-area : project*/
+/*}*/
+
+
+.section__study article {
+    display : flex;
+    justify-content: space-between;
+}
+
+.section__projects article {
+    display : grid;
+    grid-template-areas:
+            "title date"
+            "infos infos";
+}
+
+.section__projects article h3,
+.section__experience article h3{
+    grid-area : title
+}
+
+.section__projects article p,
+.section__experience article article__title{
+    grid-area : date
+}
+
+.section__projects article ul,
+.section__experience article article__text{
+    grid-area : infos
+}
+
+.list__item{
+    display : flex;
+    justify-content: space-between;
+}
+
+.section__experience article{
+    display : grid;
+    grid-template-areas:
+            "title date"
+            "infos infos";
+}
+
+.section__skill ul,
+.section_soft_skill ul{
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+}
